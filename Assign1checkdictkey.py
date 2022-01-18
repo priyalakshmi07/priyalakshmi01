@@ -1,12 +1,18 @@
-dict={}
-dict=input("Enter the dict value:")
-key=input("Enter the key value:")
-#def checkKey(dict,key):
-if key in dict:
-    print("Present, ",end =" ")
-    print([key for key in dict.keys()][k])
-    print("value:",dict[k])
-else:
+def checkKey(d,key):
+    if key in d:
+        print("Present, ",end =" ")
+        print("value=",d[key])
+    else:
      print("Not present")
 
-#checkKey(dict,key)
+d={}
+user_input=int(input("Enter the dictionary values:"))
+for i in range(0,user_input):
+    key=input("Enter the key value:")
+    value=input("Enter the value:")
+    d[key]=value
+print("Dict values are",d)
+key=input("Enter the key:")
+checkKey(d,key)
+
+
