@@ -9,7 +9,7 @@ def find_a_value_in_num(numbers, item):
         return index
  return -1
 
-found_index = find_a_value_in_num(XYZ,00)
+found_index = find_a_value_in_num(XYZ,int(input("Enter the value:")))
 
 if found_index != -1:
     print("Found: ", XYZ[found_index])
