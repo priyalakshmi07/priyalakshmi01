@@ -1,17 +1,16 @@
 
 import requests
 from bs4 import BeautifulSoup as bs
-from openpyxl import Workbook
 
-
-URL = 'https://www.geeksforgeeks.org/page/'
+URL = 'https://www.imdb.com/chart/moviemeter'
 req = requests.get(URL)
 soup = bs(req.text, 'html.parser')
 
-titles = soup.find_all('div', attrs={'class', 'head'})
+titles = soup.find_all('td', attrs={'class', 'titleColumn'})
+
 titles_list = []
 
-count = 1
+count = 0
 for title in titles:
     d = {}
     d['Title Number'] = f'Title {count}'
@@ -20,5 +19,5 @@ for title in titles:
     titles_list.append(d)
 
 import pandas as pd
-df = pd.DataFrame(data = titles_list[1:],columns =titles_list[0])
+df = pd.DataFrame(data = titles_list[1:10],columns =titles_list[0])
 df.to_excel('user-page-html.xlsx')
