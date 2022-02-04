@@ -19,5 +19,5 @@ for title in titles:
     titles_list.append(d)
 
 import pandas as pd
-df = pd.DataFrame(data = titles_list[1:10],columns =titles_list[0])
+df = pd.DataFrame(data = titles_list[0:11],columns =titles_list[0])
 df.to_excel('user-page-html.xlsx')
